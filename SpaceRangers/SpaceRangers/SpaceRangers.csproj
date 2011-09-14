@@ -110,6 +110,7 @@
     <Compile Include="Classes\Content.cs" />
     <Compile Include="Classes\ContentContainer.cs" />
     <Compile Include="Classes\Debugger.cs" />
+    <Compile Include="Classes\Font.cs" />
     <Compile Include="Classes\Texture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />

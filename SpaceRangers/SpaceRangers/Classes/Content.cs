@@ -9,16 +9,16 @@ namespace SpaceRangers.Classes
 {
     static class Content
     {
-        private static ContentManager content;
+        private static ContentManager _content;
         public static void Initialize(Game game)
         {
-            content = game.Content;
+            _content = game.Content;
         }
         public static T Load<T>(string path)
         {
             try
             {
-                var item =content.Load<T>(path);
+                var item =_content.Load<T>(path);
                 return item;
             }
             catch (Exception e)
@@ -28,7 +28,7 @@ namespace SpaceRangers.Classes
         }
         public static void Unload()
         {
-            content.Unload();
+            _content.Unload();
             ContentContainer.Unload();
         }
     }

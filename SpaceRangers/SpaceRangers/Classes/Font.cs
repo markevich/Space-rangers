@@ -6,26 +6,29 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SpaceRangers.Classes
 {
-    class Texture
+    internal class Font
     {
-        private Texture2D _texture;
+        private SpriteFont _font;
         private readonly string _path;
         private bool _isLoaded = false;
 
-        public Texture(string path)
+        public Font(string path)
         {
             _path = path;
         }
-        private Texture2D Load()
+
+        private SpriteFont Load()
         {
-            _texture = Content.Load<Texture2D>(_path);
+            _font = Content.Load<SpriteFont>(_path);
             _isLoaded = true;
-            return _texture;
+            return _font;
         }
-        public Texture2D GetTexture()
+
+        public SpriteFont GetFont()
         {
-            return (_isLoaded ? _texture : Load());
+            return (_isLoaded ? _font : Load());
         }
+
         public void Reset()
         {
             _isLoaded = false;

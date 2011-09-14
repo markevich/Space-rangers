@@ -92,6 +92,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FontList.cs" />
     <Compile Include="TextureList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

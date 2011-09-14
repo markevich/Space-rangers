@@ -6,35 +6,29 @@ using Microsoft.Xna.Framework;
 using System.Diagnostics;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+using SpaceRangers.Classes;
 
 namespace SpaceRangers
 {
     class Debugger
     {
-        public int FrameCount { get; set; }
+        private int _frameCount;
         private float _seconds;
-        public int FPS { get; set; }
-        private SpriteFont arial12;
-        private RangersGame game;
-
-        public Debugger(RangersGame game,SpriteFont font1)
-        {
-            this.game = game;
-            arial12 = font1;
-
-        }
+        private int _fps;
         public  void Update(GameTime gameTime)
         {
             _seconds = (float)gameTime.TotalGameTime.TotalSeconds;
-            if(gameTime.TotalGameTime.TotalSeconds>1)
-            {
-                if (_seconds != 0)
-                    FPS = (int)(FrameCount/_seconds);
-            }
+            if (gameTime.TotalGameTime.TotalSeconds <= 1) return;
+            if (_seconds != 0)
+                _fps = (int)(_frameCount/_seconds);
         }
-        public void Trace(Object obj)
+        public void Draw(SpriteBatch spriteBatch)
         {
-            Debug.WriteLine(obj);
+            _frameCount++;
+            spriteBatch.Begin();
+            var font = ContentContainer.GetFont("Arial12");
+            spriteBatch.DrawString(font, "FPS: " + _fps, new Vector2(0, 0), Color.Yellow);
+            spriteBatch.End();
         }
     }
 }
