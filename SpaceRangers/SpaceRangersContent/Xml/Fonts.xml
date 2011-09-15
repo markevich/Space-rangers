@@ -1,13 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <XnaContent>
   <!-- TODO: replace this Asset with your own XML asset data. -->
-  <Asset Type="XmlLibrary.FontList">
-    <Fonts>
+  <Asset Type="XmlLibrary.XmlContentInfo">
+    <Content>
       <Item>
         <Name>Arial12</Name>
         <Path>Fonts/Arial12</Path>
       </Item>
-    </Fonts>
-      
+    </Content>
   </Asset>
 </XnaContent>

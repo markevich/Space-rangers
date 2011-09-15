@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <XnaContent>
   <!-- TODO: replace this Asset with your own XML asset data. -->
-  <Asset Type="XmlLibrary.TextureList">
-    <Textures>
+  <Asset Type="XmlLibrary.XmlContentInfo">
+    <Content>
       <Item>
         <Name>RedPlane</Name>
         <Path>Sprites/Sheets/redplane</Path>
       </Item>
-    </Textures>
+    </Content>
       
   </Asset>
 </XnaContent>

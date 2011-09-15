@@ -1,67 +1,73 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
+using System.Linq;
 using XmlLibrary;
 namespace SpaceRangers.Classes
 {
     class ContentContainer
     {
-        private static Dictionary<String, Texture> _texturesInfo;
-        private static Dictionary<String, Font> _fontInfo;
+        private static Dictionary<String, LazyContentItem<Texture2D>> _texturesInfo;
+        private static Dictionary<String, LazyContentItem<SpriteFont>> _fontInfo;
         private const string TexturesXmlPath = "Xml/Textures";
         private const string FontXmlPath = "Xml/Fonts";
-        private static void LoadTextures()
+        internal static void LoadContentInfo()
         {
-            _texturesInfo=new Dictionary<string, Texture>();
-            var textureList = Content.Load<TextureList>(TexturesXmlPath);
-            foreach (var texture in textureList.Textures)
+            LoadTextures();
+            LoadFonts();
+        }
+        public static void Unload()
+        {
+            Reset(_texturesInfo.Select(kvp => kvp.Value));
+        }
+        private static void Reset(IEnumerable<IResetable> dict)
+        {
+            foreach (var content in dict)
             {
-                _texturesInfo.Add(texture.Name,new Texture(texture.Path));
+                content.Reset();
             }
         }
-        private static void LoadFonts()
+        private static void LoadTextures()
         {
-            _fontInfo = new Dictionary<string, Font>();
-            var fontList = Content.Load<FontList>(FontXmlPath);
-            foreach (var font in fontList.Fonts)
+            _texturesInfo=new Dictionary<string, LazyContentItem<Texture2D>>();
+            var textureList = Content.Load<XmlContentInfo>(TexturesXmlPath);
+            foreach (var content in textureList.Content)
             {
-                _fontInfo.Add(font.Name, new Font(font.Path));
+                _texturesInfo.Add(content.Name,new LazyContentItem<Texture2D>(content.Path));
             }
         }
         public static Texture2D GetTexture(string name)
         {
             try
             {
-                return _texturesInfo[name].GetTexture();
+                return _texturesInfo[name].GetItem();
             }
             catch(Exception e)
             {
               throw  new Exception(string.Format("Cant find a texture path with name '{0}'.Original exception: {1}",name,e.Message));
             }
         }
+        
+        private static void LoadFonts()
+        {
+            _fontInfo = new Dictionary<string, LazyContentItem<SpriteFont>>();
+            var fontList = Content.Load<XmlContentInfo>(FontXmlPath);
+            foreach (var content in fontList.Content)
+            {
+                _fontInfo.Add(content.Name, new LazyContentItem<SpriteFont>(content.Path));
+            }
+        }
         public static SpriteFont GetFont(string name)
         {
             try
             {
-                return _fontInfo[name].GetFont();
+                return _fontInfo[name].GetItem();
             }
             catch (Exception e)
             {
-                throw new Exception(string.Format("Cant find a texture path with name '{0}'.Original exception: {1}", name, e.Message));
+                throw new Exception(string.Format("Cant find a font path with name '{0}'.Original exception: {1}", name, e.Message));
             }
         }
-        public static void Unload()
-        {
-            foreach (var info in _texturesInfo)
-            {
-                info.Value.Reset();
-            }
-        }
-
-        internal static void LoadContentInfo()
-        {
-            LoadFonts();
-            LoadTextures();
-        }
+        
     }
 }
