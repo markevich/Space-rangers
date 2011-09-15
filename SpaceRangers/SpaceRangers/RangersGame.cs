@@ -48,6 +48,9 @@ namespace SpaceRangers
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             _debugger.Draw(_spriteBatch);
+			_spriteBatch.Begin();
+			_spriteBatch.Draw(ContentContainer.GetTexture("RedPlane"),new Vector2(200, 200), Color.White);
+        	_spriteBatch.End();
             base.Draw(gameTime);
         }
     }
