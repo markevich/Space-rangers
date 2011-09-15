@@ -6,8 +6,8 @@ namespace SpaceRangers.Classes
 {
     class ContentContainer
     {
-        private static Dictionary<String, Texture> _texturesInfo;
-        private static Dictionary<String, Font> _fontInfo;
+        private static Dictionary<string, Texture> _texturesInfo;
+        private static Dictionary<string, Font> _fontInfo;
         private const string TexturesXmlPath = "Xml/Textures";
         private const string FontXmlPath = "Xml/Fonts";
         private static void LoadTextures()
