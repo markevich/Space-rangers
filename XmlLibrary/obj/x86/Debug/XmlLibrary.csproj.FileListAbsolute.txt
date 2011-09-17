@@ -1,6 +1,0 @@
-C:\Users\racoon\Space-rangers\XmlLibrary\bin\x86\Debug\XmlLibrary.dll
-C:\Users\racoon\Space-rangers\XmlLibrary\bin\x86\Debug\XmlLibrary.pdb
-C:\Users\racoon\Space-rangers\XmlLibrary\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\racoon\Space-rangers\XmlLibrary\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\racoon\Space-rangers\XmlLibrary\obj\x86\Debug\XmlLibrary.dll
-C:\Users\racoon\Space-rangers\XmlLibrary\obj\x86\Debug\XmlLibrary.pdb
