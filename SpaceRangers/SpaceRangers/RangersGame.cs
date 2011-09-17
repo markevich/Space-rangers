@@ -1,26 +1,30 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SpaceRangers.Classes;
+using SpaceRangers.Classes.Graphics;
+using SpaceRangers.Enums;
 
 namespace SpaceRangers
 {
 
     public class RangersGame : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch _spriteBatch;
+        private GraphicsDeviceManager _graphics;
+        private SpriteBatch _spriteBatch;
         private Debugger _debugger;
-        private SpriteFont _arial12;
         public RangersGame()
         {
-            graphics = new GraphicsDeviceManager(this);
+            _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             Classes.Content.Initialize(this);
         }
-        
+
         protected override void Initialize()
         {
             _debugger=new Debugger();
+            _graphics.PreferredBackBufferWidth = 1024;
+            _graphics.PreferredBackBufferHeight = 768;
+            _graphics.ApplyChanges();
             base.Initialize();
         }
         protected override void LoadContent()
@@ -44,7 +48,7 @@ namespace SpaceRangers
             GraphicsDevice.Clear(Color.CornflowerBlue);
             _debugger.Draw(_spriteBatch);
 			_spriteBatch.Begin();
-			_spriteBatch.Draw(ContentContainer.GetTexture("RedPlane"),new Vector2(200, 200), Color.White);
+			_spriteBatch.Draw(ContentContainer.GetSprite(ShipsEnum.RedPlane),new Vector2(200, 200), Color.White);
         	_spriteBatch.End();
             base.Draw(gameTime);
         }

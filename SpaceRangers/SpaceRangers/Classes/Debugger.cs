@@ -7,6 +7,7 @@ using System.Diagnostics;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using SpaceRangers.Classes;
+using SpaceRangers.Enums;
 
 namespace SpaceRangers
 {
@@ -26,7 +27,7 @@ namespace SpaceRangers
         {
             _frameCount++;
             spriteBatch.Begin();
-            var font = ContentContainer.GetFont("Arial12");
+            var font = ContentContainer.GetFont(FontsEnum.Arial12);
             spriteBatch.DrawString(font, "FPS: " + _fps, new Vector2(0, 0), Color.Yellow);
             spriteBatch.End();
         }
