@@ -7,8 +7,13 @@ namespace SpaceRangers.Classes
 {
     class ContentContainer
     {
+<<<<<<< HEAD
         private static Dictionary<String, LazyContentItem<Texture2D>> _texturesInfo;
         private static Dictionary<String, LazyContentItem<SpriteFont>> _fontInfo;
+=======
+        private static Dictionary<string, Texture> _texturesInfo;
+        private static Dictionary<string, Font> _fontInfo;
+>>>>>>> da170a0684724eaafa59bb1fdfd9bcc0015d0ca1
         private const string TexturesXmlPath = "Xml/Textures";
         private const string FontXmlPath = "Xml/Fonts";
         internal static void LoadContentInfo()
@@ -47,6 +52,7 @@ namespace SpaceRangers.Classes
               throw  new Exception(string.Format("Cant find a texture path with name '{0}'.Original exception: {1}",name,e.Message));
             }
         }
+        
         private static void LoadFonts()
         {
             _fontInfo = new Dictionary<string, LazyContentItem<SpriteFont>>();

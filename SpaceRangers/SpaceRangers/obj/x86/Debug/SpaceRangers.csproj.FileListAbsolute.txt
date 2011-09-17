@@ -1,0 +1,12 @@
+C:\Users\racoon\Space-rangers\SpaceRangers\SpaceRangers\bin\x86\Debug\SpaceRangers.exe
+C:\Users\racoon\Space-rangers\SpaceRangers\SpaceRangers\bin\x86\Debug\SpaceRangers.pdb
+C:\Users\racoon\Space-rangers\SpaceRangers\SpaceRangers\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\racoon\Space-rangers\SpaceRangers\SpaceRangers\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\racoon\Space-rangers\SpaceRangers\SpaceRangers\obj\x86\Debug\SpaceRangers.exe
+C:\Users\racoon\Space-rangers\SpaceRangers\SpaceRangers\obj\x86\Debug\SpaceRangers.pdb
+C:\Users\racoon\Space-rangers\SpaceRangers\SpaceRangers\bin\x86\Debug\Content\Fonts\Arial12.xnb
+C:\Users\racoon\Space-rangers\SpaceRangers\SpaceRangers\bin\x86\Debug\Content\Sprites\Sheets\redplane.xnb
+C:\Users\racoon\Space-rangers\SpaceRangers\SpaceRangers\bin\x86\Debug\Content\Xml\Textures.xnb
+C:\Users\racoon\Space-rangers\SpaceRangers\SpaceRangers\bin\x86\Debug\XmlLibrary.dll
+C:\Users\racoon\Space-rangers\SpaceRangers\SpaceRangers\bin\x86\Debug\XmlLibrary.pdb
+C:\Users\racoon\Space-rangers\SpaceRangers\SpaceRangers\bin\x86\Debug\Content\Xml\Fonts.xnb

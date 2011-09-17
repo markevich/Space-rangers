@@ -20,18 +20,13 @@ namespace SpaceRangers
         
         protected override void Initialize()
         {
-            IsFixedTimeStep = false;
-            graphics.SynchronizeWithVerticalRetrace = false;
-
             _debugger=new Debugger();
-            Services.AddService(typeof(Debugger),_debugger);
             base.Initialize();
         }
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             ContentContainer.LoadContentInfo();
-            _arial12 = Content.Load<SpriteFont>("Fonts/Arial12");
         }
 
         protected override void UnloadContent()

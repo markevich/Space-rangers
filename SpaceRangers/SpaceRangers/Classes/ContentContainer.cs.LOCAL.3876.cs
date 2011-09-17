@@ -47,6 +47,7 @@ namespace SpaceRangers.Classes
               throw  new Exception(string.Format("Cant find a texture path with name '{0}'.Original exception: {1}",name,e.Message));
             }
         }
+        
         private static void LoadFonts()
         {
             _fontInfo = new Dictionary<string, LazyContentItem<SpriteFont>>();
