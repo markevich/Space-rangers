@@ -13,19 +13,21 @@ namespace SpaceRangers.Classes.Graphics
         private Enum _textureName;
         private int _framesCount;
         private Point _startFrame;
-
+        private Point _frameWidthHeight;
         public Sprite(Enum textureName,Point frameWidthHeight,Point startFrame,int framesCount)
         {
             _textureName = textureName;
             _startFrame = startFrame;
             _framesCount = framesCount;
+            _frameWidthHeight = frameWidthHeight;
             checkParams();
         }
 
         private void checkParams()
         {
-            throw new NotImplementedException();
+
         }
+
 
         private Texture2D GetTexture()
         {
