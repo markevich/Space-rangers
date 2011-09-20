@@ -7,6 +7,7 @@ namespace SpaceRangers.Enums
 {
     enum ShipsEnum
     {
-        RedPlane
+        RedPlane,
+        Walk
     }
 }

@@ -27,12 +27,18 @@ namespace SpaceRangers
             _graphics.ApplyChanges();
             base.Initialize();
         }
+
+        private Sprite sprite;
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             ContentContainer.LoadContentInfo();
+            texture = ContentContainer.GetSprite(ShipsEnum.Walk);
+            sprite=new Sprite(ShipsEnum.Walk,new Point(24,32),new Point(1,4),8,12);
+
         }
 
+        private Texture2D texture;
         protected override void UnloadContent()
         {
         }
@@ -40,15 +46,17 @@ namespace SpaceRangers
         protected override void Update(GameTime gameTime)
         {
             _debugger.Update(gameTime);
+            sprite.Update(gameTime);
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
+        
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             _debugger.Draw(_spriteBatch);
 			_spriteBatch.Begin();
-			_spriteBatch.Draw(ContentContainer.GetSprite(ShipsEnum.RedPlane),new Vector2(200, 200), Color.White);
+            sprite.Draw(_spriteBatch);
         	_spriteBatch.End();
             base.Draw(gameTime);
         }
